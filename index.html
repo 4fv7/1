@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Rashed's page</title>
+  <link rel="icon" type="image/png" href="static/images/favicon.png">
+  
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init("3GimB5xCMJWskG-CE");
+    })();
+  </script>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@ahmedhamdan/dubai-font@1.1.1/css/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;800;900;1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="static/css/portfolio.css">
+  <link rel="stylesheet" href="static/css/scroll_animations.css">
+  <script src="static/js/main.js"></script>
+  <script src="static/js/scroll_transitions.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#home">Welcome</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" aria-expanded="false" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Rashed Alsuhaibi</h1>
+        <p>CS Student</p>
+        <a href="#contact" class="hero-cta">Get In Touch</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+<section id="about" class="container">
+  <div class="section-title">
+    <h2>About Me</h2>
+  </div>
+  <div class="about-content">
+    <p>Hello, I'm Rashed Alsuhaibi, an IT Trainee and am currently pursuing my Bachelor of Science in Computer Science at Frankfurt University of Applied Sciences. Now in my fifth semester, I have developed a solid foundation in object-oriented programming, database management, computer networks, and IT security.</p>
+    
+    <p>My passion for technology is reflected in my hands-on experience with both front-end and back-end development. I have a strong interest in web and mobile app development and am skilled in Python, Flask, Java, Swing, C/C++, JavaScript, React, PHP, HTML, and CSS. I also have valuable experience with database systems like MariaDB, MySQL, and SQLite, which supports my comprehensive approach to application development.</p>
+    
+    <p>In my previous role as a Data Entry Assistant at Advanced Middle East Industries Co. in Jeddah, I managed large datasets with MS Excel, further honing my analytical and problem-solving skills. My technical expertise is complemented by effective teamwork and communication in diverse environments—fluent in Arabic, English, and German.</p>
+    
+    <p>I am eager to secure an internship or working student position where I can apply and further develop my skills while contributing to innovative projects. Let's connect to explore opportunities and share ideas!</p>
+  
+    <p>I'm interested in the following fields: </p>
+  </div>
+
+  <!-- Skills Section -->
+  <div class="skills-container">
+    <div class="skill-item web-app">
+      <div class="skill-name">Web App Development</div>
+    </div>
+    <div class="skill-item mobile-app">
+      <div class="skill-name">Mobile App Development</div>
+    </div>
+    <div class="skill-item cybersecurity">
+      <div class="skill-name">Cybersecurity</div>
+    </div>
+    <div class="skill-item machine-learning">
+      <div class="skill-name">Machine Learning</div>
+    </div>
+  </div>
+</section>
+
+<style>
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+  margin-bottom: 3.5px;
+}
+
+.skill-item {
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item:hover {
+  transform: scale(1.03);
+  z-index: 1;
+}
+
+.skill-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+  color: white;
+  padding: 25px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Background images with higher resolution URLs */
+.web-app {
+  background-image: url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80');
+}
+
+.mobile-app {
+  background-image: url('https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80');
+}
+
+.cybersecurity {
+  background-image: url('https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80');
+}
+
+.machine-learning {
+  background-image: url('https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80');
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .skill-item {
+    height: 250px;
+  }
+}
+</style>
+    <!-- Experience Section -->
+    <section id="experience" class="container">
+      <div class="section-title">
+        <h2>Experience</h2>
+        
+      </div>
+      <a class="linked" href="https://www.mechatronics.com.sa/" target="_blank" rel="noopener"><img src="static/images/mem.png" alt="Experience" class="experience-image" href=""></a>
+      <div class="experience-content">
+        
+        <p><strong>Data Entry Assistant</strong>  
+          @ Advanced Middle East Industries Co. Mechatronics (Jeddah, Saudi Arabia)  
+          July 2019 – December 2019</p>
+          <ul>
+          <li>Contributed to a leading Automation and IoT solutions provider by ensuring accurate and efficient data entry into company systems and databases, maintaining strict confidentiality and integrity of records.</li>  
+          <li>Supported administrative workflows through document management, filing, and timely collaboration with cross-functional teams to meet project deadlines.</li> 
+          <li>Proactively verified and corrected data discrepancies, enhancing overall accuracy and reliability of organizational datasets.</li>  
+          <li>Recognized for exceptional attention to detail, adaptability to new tasks, and a proactive problem-solving approach in a fast-paced environment.</li>  
+          <li>Fostered a positive workplace culture through professional communication, teamwork, and consistent respect for colleagues and supervisors.</li>  
+          </ul>
+          <p>Key Skills Developed:
+           Data Entry | Time Management | Collaborative Problem-Solving | Administrative Support  
+          </p>
+      </div>
+    </section>
+
+<!-- Certificates Section -->
+<section id="courses" class="container">
+  <div class="section-title">
+    <h2>Courses and Certificates</h2>
+  </div>
+  
+  <div class="certificates-scroll">
+    <!-- Certificate Card 1 -->
+    <div class="certificate-card">
+      <a href="static/certificates/cert1.jpg" target="_blank" class="certificate-link">
+        <img src="static/certificates/cert1.jpg" alt="Software Engineering Certificate" class="certificate-image">
+        <div class="certificate-caption">Responsive Web Design</div>
+      </a>
+    </div>
+
+    <!-- Certificate Card 2 -->
+    <div class="certificate-card">
+      <a href="static/certificates/cert2.jpg" target="_blank" class="certificate-link">
+        <img src="static/certificates/cert2.jpg" alt="Certificate 2" class="certificate-image">
+        <div class="certificate-caption">Software Engineer</div>
+      </a>
+    </div>
+
+    <!-- Certificate Card 3 -->
+    <div class="certificate-card">
+      <a href="static/certificates/cert3.jpg" target="_blank" class="certificate-link">
+        <img src="static/certificates/cert3.jpg" alt="Certificate 3" class="certificate-image">
+        <div class="certificate-caption">Front-end Developer</div>
+      </a>
+    </div>
+
+    <!-- Certificate Card 4 -->
+    <div class="certificate-card">
+      <a href="static/certificates/cert4.jpg" target="_blank" class="certificate-link">
+        <img src="static/certificates/cert4.jpg" alt="Certificate 4" class="certificate-image">
+        <div class="certificate-caption">Security Engineer</div>
+      </a>
+    </div>
+
+    <!-- Certificate Card 5 -->
+    <div class="certificate-card">
+      <a href="static/certificates/cert5.jpg" target="_blank" class="certificate-link">
+        <img src="static/certificates/cert5.jpg" alt="Certificate 5" class="certificate-image">
+        <div class="certificate-caption">Jr Penetration Tester</div>
+      </a>
+    </div>
+
+    <!-- Certificate Card 6 -->
+    <div class="certificate-card">
+      <a href="static/certificates/cert6.jpg" target="_blank" class="certificate-link">
+        <img src="static/certificates/cert6.jpg" alt="Certificate 6" class="certificate-image">
+        <div class="certificate-caption">Cybersecurity 101</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Certificates Section Styling */
+.certificates-scroll {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent-primary) transparent;
+}
+
+.certificates-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.certificates-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.certificates-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-accent-primary);
+  border-radius: var(--border-radius-full);
+}
+
+.certificate-card {
+  flex: 0 0 300px;
+  border: 1px solid var(--color-bg-tertiary);
+  border-radius: var(--border-radius-md);
+  background: var(--color-bg-secondary);
+  transition: var(--transition-normal);
+  overflow: hidden;
+}
+
+.certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.certificate-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.certificate-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--color-bg-tertiary);
+}
+
+.certificate-caption {
+  padding: 1rem;
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .certificates-scroll {
+    gap: 1rem;
+    padding-left: 1rem;
+  }
+  
+  .certificate-card {
+    flex: 0 0 280px;
+  }
+  
+  .certificate-image {
+    height: 180px;
+  }
+  
+  .certificate-caption {
+    font-size: var(--font-size-sm);
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .certificate-card {
+    flex: 0 0 260px;
+  }
+  
+  .certificate-image {
+    height: 160px;
+  }
+}
+</style>
+
+
+    <!-- Contact Section -->
+<section id="contact" class="container">
+  <div class="section-title">
+    <h2>Contact Me</h2>
+    <p>Let's get in touch</p>
+  </div>
+  <form id="contact-form">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+    
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Rashed Alsuhaibi</h3>
+        <p>CS Student.</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/rashed-alsuhaibi/" class="social-link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          
+          <a href="https://www.instagram.com/alsohaibi1/" class="social-link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="mailto:alsohaibi1000@gmail.com" class="social-link">
+            <i class="fas fa-envelope"></i>
+          </a>
+          
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <p>Email: alsohaibi1000@gmail.com</p>
+        <p>Phone: +49 15730227310</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 Rashed Alsuhaibi. All Rights Reserved. :)</p>
+    </div>
+  </footer>
+  
+  
+
