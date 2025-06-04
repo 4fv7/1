@@ -30,22 +30,37 @@
   --font-size-4xl: 4.5rem;
   
   /* Enhanced Spacing */
-  --space-xs: 0.4rem;
+  --space-xs: 0.5rem;
   --space-sm: 0.8rem;
-  --space-md: 1.2rem;
+  --space-md: 1.5rem;
   --space-lg: 2rem;
-  --space-xl: 2.5rem;
-  --space-2xl: 3.5rem;
-  --space-3xl: 5rem;
-  --space-4xl: 7rem;
-  --space-5xl: 8rem;
-  --space-6xl: 10rem;
+  --space-xl: 2.6rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 5rem;
+  --space-5xl: 6rem;
+  --space-6xl: 7rem;
   
   /* Section Spacing */
-  --section-spacing-top: var(--space-4xl);
-  --section-spacing-bottom: var(--space-4xl);
-  --section-margin-top: var(--space-3xl);
-  --section-margin-bottom: var(--space-3xl);
+  --section-spacing-top: var(--space-2xl);
+  --section-spacing-bottom: var(--space-2xl);
+  --section-margin-top: var(--space-xl);
+  --section-margin-bottom: var(--space-xl);
+  
+  /* Borders & Shadows */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  --border-radius-full: 9999px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);    /* Softer shadow for a gentle appearance */
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
 }
 
 
@@ -72,12 +87,6 @@ body {
   width: 100%;
 }
 
-/* Smooth scrolling for all browsers */
-@media screen and (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
 
 /* Section anchor offset adjustment */
 section[id] {
@@ -1209,6 +1218,7 @@ footer::before {
   left: 0;
   width: 100%;
   height: 100vh;
+  /* Change from solid black to gradient matching site colors */
   background: linear-gradient(135deg, #eae3f7 0%, #e6f7ff 100%);  /* Matching --color-bg-primary */
   display: flex;
   justify-content: center;
@@ -1218,7 +1228,8 @@ footer::before {
 }
 
 .welcome-text {
-  background: linear-gradient(135deg, #4fc3f7, #ba68c8);  /* Matching accent colors */
+  /* Change from white to gradient text */
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -1227,7 +1238,6 @@ footer::before {
   opacity: 0;
   transform: translateY(20px);
   animation: welcomeAnimation 2s ease-in-out forwards;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes welcomeAnimation {
@@ -1265,19 +1275,19 @@ footer::before {
     --font-size-3xl: 2.5rem;
     --font-size-2xl: 1.8rem;
 
-    /* Reduced Spacing for Mobile */
-    --space-xs: 0.2rem;
-    --space-sm: 0.5rem;
+    /* Enhanced Spacing */
+    --space-xs: 0.18rem;
+    --space-sm: 0.4rem;
     --space-md: 0.75rem;
-    --space-lg: 1.2rem;
-    --space-xl: 1.4rem;
-    --space-2xl: 1.8rem;
+    --space-lg: 1.3rem;
+    --space-xl: 1.6rem;
+    --space-2xl: 2rem;
     --space-3xl: 3rem;
     --space-4xl: 4rem;
     --space-5xl: 5rem;
     --space-6xl: 7rem;
 
-    /* Reduced Section Spacing for Mobile */
+    /* Spacing */
     --section-spacing-top: var(--space-2xl);
     --section-spacing-bottom: var(--space-2xl);
     --section-margin-top: var(--space-xl);
