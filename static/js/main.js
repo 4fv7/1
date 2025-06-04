@@ -45,4 +45,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
   });
-  
+
+document.addEventListener('DOMContentLoaded', () => {
+    const welcomeScreen = document.querySelector('.welcome-screen');
+    
+    // Hide welcome screen after animation
+    setTimeout(() => {
+        welcomeScreen.style.opacity = '0';
+        setTimeout(() => {
+            welcomeScreen.style.display = 'none';
+        }, 500);
+    }, 2500);
+});

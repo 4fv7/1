@@ -23,6 +23,10 @@
   <script src="static/js/scroll_transitions.js"></script>
 </head>
 <body>
+  <!-- Add this welcome screen -->
+  <div class="welcome-screen">
+    <div class="welcome-text">Welcome!</div>
+  </div>
   <header>
     <nav class="navbar">
       <div class="logo">
@@ -46,9 +50,12 @@
   <main>
     <!-- Hero Section -->
     <section id="home" class="hero">
+      <video autoplay muted loop playsinline id="hero-video">
+        <source src="static/videos/hero.mp4" type="video/mp4">
+      </video>
       <div class="hero-content">
         <h1>Rashed Alsuhaibi</h1>
-        <p>CS Student</p>
+        <p class="hero-about">CS Student</p>
         <a href="#contact" class="hero-cta">Get In Touch</a>
       </div>
     </section>
@@ -394,7 +401,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#courses">Courses</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -408,6 +415,8 @@
       <p>&copy; 2025 Rashed Alsuhaibi. All Rights Reserved. :)</p>
     </div>
   </footer>
-  
-  
+</body>
+</html>
+
+
 
