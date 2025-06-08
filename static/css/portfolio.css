@@ -25,13 +25,13 @@
   --font-size-sm: 1.4rem;
   --font-size-lg: 1.7rem;
   --font-size-xl: 2.3rem;
-  --font-size-2xl: 2.6rem;
+  --font-size-2xl: 2.7rem;
   --font-size-3xl: 3.5rem;
   --font-size-4xl: 4.5rem;
   
   /* Enhanced Spacing */
   --space-xs: 0.5rem;
-  --space-sm: 0.8rem;
+  --space-sm: 1rem;
   --space-md: 1.5rem;
   --space-lg: 2rem;
   --space-xl: 2.6rem;
@@ -193,9 +193,9 @@ a:not(.linked):hover::after {
 }
 
 .navbar .logo a {
-  color: var(--color-text-primary);
+  
   font-size: var(--font-size-2xl);
-  font-weight: 900;
+  font-weight: 500;
   text-decoration: none;
   transition: all var(--transition-normal);
   display: flex;
@@ -203,12 +203,18 @@ a:not(.linked):hover::after {
   gap: var(--space-sm);
 }
 
+.navbar .logo a p {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+}
+
 .navbar .logo a::before {
   content: '';
   display: inline-block;
   width: 10px;
   height: 10px;
-  background-color: var(--color-accent-primary);
+  background: var(--color-accent-primary);
   border-radius: var(--border-radius-full);
   transition: all var(--transition-normal);
 }
@@ -218,9 +224,9 @@ a:not(.linked):hover::after {
 }
 
 .navbar .logo a:hover::before {
-  transform: scale(1.5);
-  background-color: var(--color-accent-secondary);
-  box-shadow: 0 0 15px var(--color-accent-secondary);
+  transform: scale(2);
+  background: var(--color-accent-secondary);
+  box-shadow: 0 0 20px var(--color-accent-secondary);
 }
 
 .navbar .logo a::after {
@@ -860,11 +866,11 @@ form {
   gap: var(--space-md);
   max-width: 600px;
   margin: auto;
-  margin-top: -15px;
+  
 }
 
 form label {
-  margin-top: -10px;
+  margin-top: var(--space-xs);
   margin-bottom: var(--space-xs);
   font-weight: 600;
   color: var(--color-text-secondary);
@@ -891,39 +897,65 @@ form textarea:focus {
 }
 
 form button {
-  padding: var(--space-md) var(--space-xl);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-lg);
   background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
-  color: var(--color-text-primary);
-  font-weight: 600;
-  border-radius: var(--border-radius-md);
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
   border: none;
-  cursor: pointer;
-  transition: all var(--transition-normal);
-  position: relative;
+  border-radius: var(--border-radius-lg);
   overflow: hidden;
-  font-size: var(--font-size-base);
-  margin-top: var(--space-md);
-  align-self: flex-start;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin: var(--space-md) auto;
 }
 
-form button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: all var(--transition-fast);
+form button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+  font-weight: 800;
+  color: white;
 }
 
-form button:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+form button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
 }
 
-form button:hover::before {
-  left: 100%;
+form button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+form button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+form button:hover span {
+  transform: translateX(5em);
+}
+
+form button:active {
+  transform: scale(0.95);
+}
+
+form button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 195, 247, 0.4);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
 }
 
 /*--------------------------------------------------------------
@@ -948,16 +980,7 @@ footer {
   z-index: 1;
 }
 
-/* If you still need the top border decoration: */
-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--color-accent-primary);
-}
+
 
 /* The inner grid can remain centered up to 1200px: */
 .footer-content {
@@ -993,7 +1016,7 @@ footer::before {
 
 .footer-links {
   list-style: none;
-  margin-top: -20px;
+  margin-top: -30px;
 }
 
 .footer-links li {
@@ -1234,7 +1257,7 @@ footer::before {
   background-clip: text;
   color: transparent;
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 200;
   opacity: 0;
   transform: translateY(20px);
   animation: welcomeAnimation 2s ease-in-out forwards;
@@ -1324,6 +1347,7 @@ footer::before {
 
   .navbar .logo a {
     font-size: var(--font-size-xl);
+    
   }
 
   .menu-toggle {
