@@ -19,14 +19,32 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
   <link rel="stylesheet" href="static/css/portfolio.css">
   <link rel="stylesheet" href="static/css/scroll_animations.css">
+  <link rel="stylesheet" href="static/css/welcome-screen.css">
   <script src="static/js/main.js"></script>
   <script src="static/js/scroll_transitions.js"></script>
 </head>
 <body>
-  <!-- Add this welcome screen -->
-  <div class="welcome-screen">
-    <div class="welcome-text">Welcome!</div>
+  <!-- Welcome Screen -->
+  <div class="welcome-screen" id="welcomeScreen">
+    <div class="logo-container">
+      <!-- SVG Hexagon Frame with gradient stroke -->
+      <svg class="hexagon-svg" viewBox="0 0 300 300">
+        <defs>
+          <linearGradient id="hexagonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:var(--color-accent-primary);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:var(--color-accent-secondary);stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <polygon 
+          class="hexagon-path" 
+          points="150,30 255,90 255,210 150,270 45,210 45,90"
+        />
+      </svg>
+      
+      <div class="logo-text">4fv7</div>
+    </div>
   </div>
+
   <header>
     <nav class="navbar">
       <div class="logo">
@@ -76,96 +94,53 @@
   
     <p>I'm interested in the following fields: </p>
   </div>
-
-  <!-- Skills Section -->
-  <div class="skills-container">
-    <div class="skill-item web-app">
-      <div class="skill-name">Web App Development</div>
-    </div>
-    <div class="skill-item mobile-app">
-      <div class="skill-name">Mobile App Development</div>
-    </div>
-    <div class="skill-item cybersecurity">
-      <div class="skill-name">Cybersecurity</div>
-    </div>
-    <div class="skill-item machine-learning">
-      <div class="skill-name">Machine Learning</div>
-    </div>
-  </div>
 </section>
 
-<style>
-.skills-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-  margin-bottom: 3.5px;
-}
+<!-- Skills Section - Moved outside of container -->
+<div class="skills-container">
+  <div class="skill-item web-app">
+    <div class="skill-name">Web App Development</div>
+  </div>
+  <div class="skill-item mobile-app">
+    <div class="skill-name">Mobile App Development</div>
+  </div>
+  <div class="skill-item cybersecurity">
+    <div class="skill-name">Cybersecurity</div>
+  </div>
+  <div class="skill-item machine-learning">
+    <div class="skill-name">Machine Learning</div>
+  </div>
+</div>
 
-.skill-item {
-  height: 300px;
-  border-radius: 15px;
-  overflow: hidden;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.skill-item:hover {
-  transform: scale(1.03);
-  z-index: 1;
-}
-
-.skill-name {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
-  color: white;
-  padding: 25px;
-  font-size: 1.3rem;
-  font-weight: 600;
-  text-align: center;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-/* Background images with higher resolution URLs */
-.web-app {
-  background-image: url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80');
-}
-
-.mobile-app {
-  background-image: url('https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80');
-}
-
-.cybersecurity {
-  background-image: url('https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80');
-}
-
-.machine-learning {
-  background-image: url('https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80');
-}
-
-@media (max-width: 768px) {
-  .skills-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .skill-item {
-    height: 250px;
-  }
-}
-</style>
     <!-- Experience Section -->
     <section id="experience" class="container">
       <div class="section-title">
         <h2>Experience</h2>
-        
       </div>
+
+      <!-- PAYONE Experience -->
+      <a class="linked" href="https://www.payone.com/DE-en" target="_blank" rel="noopener"><img src="static/images/payone.png" alt="Experience" class="experience-image" href=""></a>
+      <div class="experience-content">
+  
+        <p><strong>IT Security Werkstudent</strong>  
+          @ PAYONE (Frankfurt, Germany)  
+          June 2025 – December 2025</p>
+          <ul>
+          <li>Working as a working student in the IT Security department of Germany's largest payment provider in the KRITIS (Critical Infrastructure) environment, focusing on software security and offensive security measures.</li>  
+          <li>Conducting penetration tests and simulating attack patterns using advanced security frameworks and tools required in the KRITIS sector, developing CTF challenges that simulate real-world payment security scenarios.</li> 
+          <li>Performing comprehensive vulnerability scans and analysis, ensuring compliance with strict KRITIS regulations including DORA and PCI-DSS 4.0 standards for critical infrastructure protection.</li>  
+          <li>Integrating SAST tools and reviewing third-party components for compliance, supporting the implementation of Secure Software Development Life Cycle (SSDLC) processes.</li>  
+          <li>Building automation applications that combine OOP, networking, and security knowledge for vulnerability tracking, team assignment, and SLA management in high-availability payment systems.</li>  
+          <li>Actively participating in security processes, incident documentation, and cross-departmental collaboration with Operations, Infrastructure, and Compliance teams.</li>
+          </ul>
+          <p>Key Skills Developed:
+          Penetration Testing | Vulnerability Management | SAST Integration | KRITIS Compliance | PCI-DSS | API Security | Secure Coding | Critical Infrastructure Security | Automation Development | Payment Security
+          </p>
+      </div>
+
+      <div class="divider-line"></div>
+
+      <!-- MEM Experience -->
       <a class="linked" href="https://www.mechatronics.com.sa/" target="_blank" rel="noopener"><img src="static/images/mem.png" alt="Experience" class="experience-image" href=""></a>
       <div class="experience-content">
         
@@ -269,98 +244,6 @@
     
   </div>
 </section>
-
-<style>
-/* Certificates Section Styling */
-.certificates-scroll {
-  display: flex;
-  gap: 1.5rem;
-  overflow-x: auto;
-  padding: 1rem 0;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-accent-primary) transparent;
-}
-
-.certificates-scroll::-webkit-scrollbar {
-  height: 6px;
-}
-
-.certificates-scroll::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.certificates-scroll::-webkit-scrollbar-thumb {
-  background: var(--color-accent-primary);
-  border-radius: var(--border-radius-full);
-}
-
-.certificate-card {
-  flex: 0 0 300px;
-  border: 1px solid var(--color-bg-tertiary);
-  border-radius: var(--border-radius-md);
-  background: var(--color-bg-secondary);
-  transition: var(--transition-normal);
-  overflow: hidden;
-}
-
-.certificate-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
-.certificate-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
-
-.certificate-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-bottom: 1px solid var(--color-bg-tertiary);
-}
-
-.certificate-caption {
-  padding: 1rem;
-  font-size: var(--font-size-base);
-  color: var(--color-text-secondary);
-  text-align: center;
-}
-
-/* Mobile Optimization */
-@media (max-width: 768px) {
-  .certificates-scroll {
-    gap: 1rem;
-    padding-left: 1rem;
-  }
-  
-  .certificate-card {
-    flex: 0 0 280px;
-  }
-  
-  .certificate-image {
-    height: 180px;
-  }
-  
-  .certificate-caption {
-    font-size: var(--font-size-sm);
-    padding: 0.75rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .certificate-card {
-    flex: 0 0 260px;
-  }
-  
-  .certificate-image {
-    height: 160px;
-  }
-} 
-</style>
-
 
     <!-- Contact Section -->
 <section id="contact" class="container">

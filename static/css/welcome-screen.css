@@ -1,0 +1,122 @@
+.welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  animation: fadeOut 1s ease-in-out 3s forwards;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent any overflow */
+}
+
+
+.logo-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  max-width: 90vw; /* Ensure it doesn't exceed viewport width */
+  max-height: 90vh; /* Ensure it doesn't exceed viewport height */
+}
+
+.logo-text {
+  font-size: 5rem;
+  font-weight: 700;
+  
+  font-family: 'Raleway', sans-serif;
+  z-index: 2;
+  opacity: 0;
+  animation: textAppear 0.7s ease-in-out 1s forwards;
+  white-space: nowrap; /* Prevent text wrapping */
+
+  /* Gradient text color */
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.hexagon-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  max-width: 80vw; /* Responsive max width */
+  max-height: 80vh; /* Responsive max height */
+}
+
+.hexagon-path {
+  fill: none;
+  stroke: url(#hexagonGradient);
+  stroke-width: 3;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  filter: drop-shadow(0 0 10px rgba(116, 75, 162, 0.3));
+  animation: 
+    drawHexagon 1.5s ease-in-out 1s forwards,
+    eraseHexagon 1.3s ease-in-out 2.2s forwards;
+}
+
+@keyframes drawHexagon {
+  0% {
+    stroke-dashoffset: 900;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes eraseHexagon {
+  0% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: -900;
+    opacity: 0;
+  }
+}
+
+@keyframes textAppear {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

@@ -1,6 +1,35 @@
 // static/js/main.js
 
 document.addEventListener('DOMContentLoaded', function() {
+  const welcomeScreen = document.getElementById('welcomeScreen');
+  const body = document.body;
+  const html = document.documentElement;
+  
+  // Ensure the welcome screen is visible and blocks everything
+  welcomeScreen.style.display = 'flex';
+  welcomeScreen.style.position = 'fixed';
+  welcomeScreen.style.zIndex = '99999';
+  
+  // Disable scrolling completely while welcome screen is active
+  body.style.overflow = 'hidden';
+  html.style.overflow = 'hidden';
+  body.style.position = 'fixed';
+  body.style.width = '100%';
+  body.style.height = '100%';
+  
+  // Hide welcome screen after all animations complete
+  setTimeout(() => {
+    welcomeScreen.style.display = 'none';
+    // Re-enable scrolling
+    body.style.overflow = 'auto';
+    html.style.overflow = 'auto';
+    body.style.position = 'static';
+    body.style.width = 'auto';
+    body.style.height = 'auto';
+  }, 3500); // 3.5 seconds total
+});
+
+document.addEventListener('DOMContentLoaded', function() {
     // --- Mobile menu toggle ---
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks  = document.querySelector('.nav-links');
@@ -46,14 +75,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const welcomeScreen = document.querySelector('.welcome-screen');
-    
-    // Hide welcome screen after animation
-    setTimeout(() => {
-        welcomeScreen.style.opacity = '0';
-        setTimeout(() => {
-            welcomeScreen.style.display = 'none';
-        }, 500);
-    }, 2500);
-});
