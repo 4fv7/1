@@ -70,28 +70,40 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-width: 100%;
 }
 
 html {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  max-width: 100%;
-  overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 120px; /* Increased for better spacing from fixed header */
 }
 
 body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: var(--font-primary);
   line-height: 1.6;
   color: var(--color-text-secondary);
   background: var(--color-bg-primary);
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100%;
+}
+
+/* Prevent any element from exceeding viewport width */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+*::before, *::after {
+  box-sizing: border-box;
+}
 
 /* Section anchor offset adjustment */
 section[id] {
@@ -602,18 +614,21 @@ main section:not(#home)::before {
   grid-template-rows: 1fr 1fr;
   gap: 0;
   margin: 0;
-  width: 100%;
+  padding: 0;
   height: 100vh;
   min-height: 500px;
-  /* Break out to full viewport width */
+  /* Break out to full viewport width - same as hero and footer */
   position: relative;
   left: 50%;
   margin-left: -50vw;
   width: 100vw;
+  max-width: none;
+  box-sizing: border-box;
 }
 
 .skill-item {
   height: 100%;
+  width: 100%;
   border-radius: 0;
   overflow: hidden;
   position: relative;
@@ -624,6 +639,8 @@ main section:not(#home)::before {
   border: none;
   margin: 0;
   padding: 0;
+  max-width: none;
+  box-sizing: border-box;
 }
 
 .skill-item:hover {
@@ -673,10 +690,18 @@ main section:not(#home)::before {
     grid-template-rows: repeat(4, 1fr);
     height: 100vh;
     min-height: 600px;
+    /* Keep the same breakout technique */
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    width: 100vw;
+    max-width: none;
   }
   
   .skill-item {
     height: 100%;
+    width: 100%;
+    max-width: none;
   }
   
   .skill-name {
@@ -692,6 +717,16 @@ main section:not(#home)::before {
     grid-template-rows: repeat(4, 1fr);
     height: 100vh;
     min-height: 500px;
+    /* Keep the same breakout technique */
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    width: 100vw;
+    max-width: none;
+  }
+  
+  .skill-item {
+    max-width: none;
   }
   
   .skill-name {
@@ -699,7 +734,6 @@ main section:not(#home)::before {
     padding: 15px;
   }
 }
-
 /*--------------------------------------------------------------
 # Contact Form
 --------------------------------------------------------------*/
@@ -1144,7 +1178,16 @@ footer {
     transform: translateX(-50%);
   }
 
+  .footer-links {
+    margin: auto;
+  }
+
+  .footer-section{
+    margin: auto;
+  }
+
   .social-links {
+    margin: auto;
     justify-content: center;
   }
 
@@ -1282,12 +1325,12 @@ footer {
 }
 
 .experience-image:hover{
-  animation: Scale 0.5s forwards;
+  animation: Scale 0.4s forwards;
   transform-style: preserve-3d;
   backface-visibility:visible;
 }
 
 @keyframes Scale {
   0% { transform: scale(1); }
-  100% { transform: scale(1.35); }
+  100% { transform: scale(1.2); }
 }
