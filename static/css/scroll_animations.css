@@ -1,11 +1,5 @@
-/* 
- * Scroll Animations CSS
- * Add these styles to your modernized_portfolio.css file
- * or include as a separate file
- */
-
 /* Scroll Reveal Animation Classes */
-.reveal {
+  .reveal {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease;
@@ -59,22 +53,6 @@
     transition: background-color 0.5s ease;
   }
   
-  /* Active navigation indicator */
-  .nav-links a.active {
-    color: var(--color-accent-primary);
-    position: relative;
-  }
-  
-  .nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-accent-primary);
-  }
-  
   /* Progress indicator */
   .scroll-progress {
     will-change: backdrop-filter;
@@ -111,33 +89,5 @@
     background: linear-gradient(to bottom right, transparent 49.5%, var(--color-bg-secondary) 50%);
   }
   
-  /* Back to top button */
-  .back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    background: var(--color-accent-primary);
-    color: var(--color-text-primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-    z-index: 99;
-  }
-  
-  .back-to-top.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .back-to-top:hover {
-    background: var(--color-accent-secondary);
-    transform: translateY(-5px);
-  }
+ 
   

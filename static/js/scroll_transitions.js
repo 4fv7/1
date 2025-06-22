@@ -1,21 +1,8 @@
-/**
- * Scroll Transitions and Animations
- * Enhanced scrolling experience for portfolio website
- */
-
 document.addEventListener('DOMContentLoaded', function() {
   // Create scroll progress indicator
   const progressBar = document.createElement('div');
   progressBar.className = 'scroll-progress';
   document.body.appendChild(progressBar);
-
-  // Create back to top button
-  const backToTop = document.createElement('a');
-  backToTop.className = 'back-to-top';
-  backToTop.innerHTML = '&uarr;';
-  backToTop.setAttribute('href', '#home');
-  backToTop.setAttribute('aria-label', 'Back to top');
-  document.body.appendChild(backToTop);
 
   // Add reveal classes to sections
   document.querySelectorAll('section').forEach((section, index) => {
@@ -42,13 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const progress = (scrollTop / documentHeight) * 100;
     
     progressBar.style.width = progress + '%';
-    
-    // Show/hide back to top button
-    if (scrollTop > windowHeight / 2) {
-      backToTop.classList.add('visible');
-    } else {
-      backToTop.classList.remove('visible');
-    }
   }
 
   // Reveal elements on scroll

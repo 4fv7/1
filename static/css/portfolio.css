@@ -123,7 +123,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: var(--font-size-4xl);
-  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  font-weight: 800;
+  background: linear-gradient(140deg, var(--color-accent-primary), var(--color-accent-secondary));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -148,16 +149,15 @@ h2 {
 h2::after {
   content: '';
   position: absolute;
-  bottom: -0.5rem;
+  bottom: -5px;
   left: 0;
   width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-accent-primary), transparent);
+  height: 1px;
+  background: linear-gradient(90deg,transparent, var(--color-accent-primary), var(--color-accent-secondary), transparent);
   border-radius: var(--border-radius-full);
 }
 
 p, li {
-  margin-bottom: 5px;
   color: var(--color-text-tertiary);
   font-size: var(--font-size-lg);
 }
@@ -197,7 +197,7 @@ a:not(.linked):hover::after {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(235, 242, 248, 0.4);
+  background: rgba(237, 243, 248, 0.3);
   backdrop-filter: blur(8px);
   will-change: backdrop-filter;
   padding: var(--space-md) var(--space-xl);
@@ -206,7 +206,7 @@ a:not(.linked):hover::after {
 }
 
 .navbar:hover {
-  background: rgba(235, 242, 248, 0.5);
+  background: rgba(237, 243, 248, 0.5);
 }
 
 .navbar .logo a {
@@ -221,17 +221,20 @@ a:not(.linked):hover::after {
 }
 
 .navbar .logo a p {
-  color: var(--color-text-primary);
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-}
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    background: linear-gradient(140deg, var(--color-accent-primary), var(--color-accent-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 
 .navbar .logo a::before {
   content: '';
   display: inline-block;
   width: 10px;
   height: 10px;
-  background: var(--color-accent-primary);
+  background: linear-gradient(140deg, var(--color-accent-primary), var(--color-accent-secondary));
   border-radius: var(--border-radius-full);
   transition: all var(--transition-normal);
 }
@@ -287,8 +290,10 @@ a:not(.linked):hover::after {
 }
 
 .navbar .nav-links a:hover {
-  color: var(--color-accent-primary);
-  background: rgba(0, 206, 201, 0.1);
+  background: linear-gradient(140deg, var(--color-accent-primary), var(--color-accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;  display: block;
   transform: translateY(-2px);
 }
 
@@ -302,20 +307,24 @@ a:not(.linked):hover::after {
 
 /* Enhanced active section indicator */
 .nav-links a.active {
-  color: var(--color-accent-primary);
-  position: relative;
+  background: linear-gradient(140deg, var(--color-accent-primary), var(--color-accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;  display: block;  position: relative;
   font-weight: 600;
 }
 
 .nav-links a.active::after {
-  content: '';
+  
   position: absolute;
   bottom: -2px;
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--color-accent-primary);
-  display: block;
+  background: linear-gradient(140deg, var(--color-accent-primary), var(--color-accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;  display: block;
 }
 
 /* Base Toggle Container */
@@ -336,7 +345,7 @@ a:not(.linked):hover::after {
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: var(--color-text-primary);
+  background: linear-gradient(140deg, var(--color-accent-primary), var(--color-accent-secondary));
   border-radius: var(--border-radius-full);
   transition: 
     top var(--transition-normal),
@@ -361,21 +370,6 @@ a:not(.linked):hover::after {
 .menu-toggle.active span:nth-child(3) {
   top: calc(50% - 1.5px);
   transform: rotate(-45deg);
-}
-
-@media (min-width: 1670px) {
-  .menu-toggle {
-    display: none !important;
-  }
-  .nav-links {
-    display: flex !important;        /* ensure your desktop nav is always visible */
-    flex-direction: row;             /* override any mobile column setting */
-    position: static;                /* back to normal flow */
-    background: none;                /* remove mobile overlay styles */
-    width: auto;                     /* drop full‑screen width */
-    padding: 0;                      /* reset any mobile padding */
-    box-shadow: none;                /* reset mobile shadows */
-  }
 }
 
 /*--------------------------------------------------------------
@@ -502,10 +496,11 @@ main section:not(#home)::before {
 
 /* Horizontal line divider */
 .divider-line {
+  margin: var(--space-3xl) 0;
   position: relative;
   width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-accent-primary), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent,var(--color-accent-primary), var(--color-accent-secondary), transparent);
 }
 
 /*--------------------------------------------------------------
@@ -540,7 +535,7 @@ main section:not(#home)::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(0, 206, 201, 0.1), rgba(108, 92, 231, 0.1));
+  background: linear-gradient(140deg, rgba(0, 206, 201, 0.1), rgba(108, 92, 231, 0.1));
   z-index: -1;
   transition: all var(--transition-slow);
 }
@@ -587,7 +582,7 @@ main section:not(#home)::before {
 .courses-link {
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
-  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  background: linear-gradient(140deg, var(--color-accent-primary), var(--color-accent-secondary));
   color: var(--color-text-primary);
   border-radius: var(--border-radius-md);
   font-size: var(--font-size-sm);
@@ -603,7 +598,16 @@ main section:not(#home)::before {
 .courses-link::after {
   display: none;
 }
-
+/*--------------------------------------------------------------
+# contents/texts
+--------------------------------------------------------------*/
+.about-content span,.experience-content p strong{
+  background: linear-gradient(140deg, var(--color-accent-primary), var(--color-accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 350;
+}
 /*--------------------------------------------------------------
 # Skills Section
 --------------------------------------------------------------*/
@@ -683,57 +687,6 @@ main section:not(#home)::before {
   background-image: url('https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80');
 }
 
-/* Responsive Design for Skills */
-@media (max-width: 1024px) {
-  .skills-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    height: 100vh;
-    min-height: 600px;
-    /* Keep the same breakout technique */
-    position: relative;
-    left: 50%;
-    margin-left: -50vw;
-    width: 100vw;
-    max-width: none;
-  }
-  
-  .skill-item {
-    height: 100%;
-    width: 100%;
-    max-width: none;
-  }
-  
-  .skill-name {
-    font-size: 1.6rem;
-    text-shadow: #1a1a1a 0px 0px 1px;
-    padding: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .skills-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    height: 100vh;
-    min-height: 500px;
-    /* Keep the same breakout technique */
-    position: relative;
-    left: 50%;
-    margin-left: -50vw;
-    width: 100vw;
-    max-width: none;
-  }
-  
-  .skill-item {
-    max-width: none;
-  }
-  
-  .skill-name {
-    font-size: 1.2rem;
-    padding: 15px;
-  }
-}
 /*--------------------------------------------------------------
 # Contact Form
 --------------------------------------------------------------*/
@@ -776,7 +729,7 @@ form textarea:focus {
 form button {
   font-family: var(--font-primary);
   font-size: var(--font-size-lg);
-  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  background: linear-gradient(140deg, var(--color-accent-primary), var(--color-accent-secondary));
   color: white;
   padding: 0.7em 1em;
   padding-left: 0.9em;
@@ -885,10 +838,11 @@ footer {
   content: '';
   position: absolute;
   bottom: -5px;
-  left: 0;
-  width: 40px;
-  height: 2px;
-  background: var(--color-accent-primary);
+  left: 50%;
+  width: 100px;
+  transform: translateX(-50%);
+  height: 1px;
+  background: linear-gradient(90deg,transparent, var(--color-accent-primary), var(--color-accent-secondary), transparent);
 }
 
 .footer-links {
@@ -906,8 +860,10 @@ footer {
 }
 
 .footer-links a:hover {
-  color: var(--color-accent-primary);
-  padding-left: var(--space-sm);
+  background: linear-gradient(140deg, var(--color-accent-primary), var(--color-accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .social-links {
@@ -916,24 +872,26 @@ footer {
   margin-top: var(--space-md);
   justify-content: center;
   text-align: center;
+  font-size: 2rem;
 }
 
 .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background: transparent;
   border-radius: var(--border-radius-full);
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   transition: all var(--transition-normal);
 }
 
 .social-link:hover {
-  background: var(--color-accent-primary);
-  color: var(--color-text-primary);
-  transform: translateY(-3px);
+  background: linear-gradient(180deg, var(--color-accent-primary), var(--color-accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .copyright {
@@ -1060,26 +1018,41 @@ footer {
 /*--------------------------------------------------------------
 # Responsive Design
 --------------------------------------------------------------*/
-@media (max-width: 1670px) {
+@media (min-width: 1400px) {
+  .menu-toggle {
+    display: none !important;
+  }
+  .nav-links {
+    display: flex !important;        /* ensure your desktop nav is always visible */
+    flex-direction: row;             /* override any mobile column setting */
+    position: static;                /* back to normal flow */
+    background: none;                /* remove mobile overlay styles */
+    width: auto;                     /* drop full‑screen width */
+    padding: 0;                      /* reset any mobile padding */
+    box-shadow: none;                /* reset mobile shadows */
+  }
+}
+
+@media (max-width: 1399px) {
   :root {
     /* Typography */
     --font-primary: 'Raleway', sans-serif;
     --font-secondary: 'Raleway', sans-serif;
-    --font-size-base: 1.0rem;
-    --font-size-sm: 1.15rem;
-    --font-size-lg: 1.28rem;
-    --font-size-xl: 1.5rem;
-    --font-size-4xl: 3.5rem;
-    --font-size-3xl: 2.5rem;
-    --font-size-2xl: 1.8rem;
+    --font-size-4xl: 3.3rem;
+    --font-size-3xl: 2.2rem; /* section titles */
+    --font-size-2xl: 2rem;
+    --font-size-xl: 1.8rem;
+    --font-size-lg: 1.3rem; /* texts and contents */
+    --font-size-sm: 1.2rem;
+    --font-size-base: 1rem;
 
     /* Enhanced Spacing */
     --space-xs: 0.18rem;
     --space-sm: 0.4rem;
     --space-md: 0.75rem;
     --space-lg: 1.1rem;
-    --space-xl: 1.2rem;
-    --space-2xl: 1.35rem;
+    --space-xl: 1.4rem;
+    --space-2xl: 1.8rem;
     --space-3xl: 2.5rem;
     --space-4xl: 3.5rem;
     --space-5xl: 4.3rem;
@@ -1106,6 +1079,10 @@ footer {
     scroll-margin-top: 80px;
   }
 
+  .section-title h2 {
+    font-size: var(--font-size-3xl);
+  }
+
   main section:not(#home) {
     padding-top: var(--section-spacing-top);
     padding-bottom: var(--section-spacing-bottom);
@@ -1119,12 +1096,7 @@ footer {
   .navbar {
     padding: var(--space-md);
   }
-
-  .navbar .logo a {
-    font-size: var(--font-size-xl);
-    
-  }
-
+ 
   .menu-toggle {
     display: flex;
   }
@@ -1152,13 +1124,33 @@ footer {
     margin: 0;
   }
 
-  /* Hero Section */
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
   .about-content {
     margin: auto;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    height: 100vh;
+    min-height: 600px;
+    /* Keep the same breakout technique */
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    width: 100vw;
+    max-width: none;
+  }
+  
+  .skill-item {
+    height: 100%;
+    width: 100%;
+    max-width: none;
+  }
+  
+  .skill-name {
+    font-size: 1.6rem;
+    text-shadow: #1a1a1a 0px 0px 1px;
+    padding: 20px;
   }
 
   /* Certificates */
@@ -1173,11 +1165,6 @@ footer {
     text-align: center;
   }
 
-  .footer-section h3::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
   .footer-links {
     margin: auto;
   }
@@ -1189,6 +1176,7 @@ footer {
   .social-links {
     margin: auto;
     justify-content: center;
+    font-size: 1.5rem;
   }
 
   /* Grids */
@@ -1196,13 +1184,6 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  /* UI Elements */
-  .back-to-top {
-    width: 40px;
-    height: 40px;
-    bottom: 15px;
-    right: 15px;
-  }
 }
 
 /* Certificates Section Styling */
@@ -1298,6 +1279,28 @@ footer {
 }
 
 @media (max-width: 480px) {
+
+  .skills-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    height: 100vh;
+    min-height: 500px;
+    /* Keep the same breakout technique */
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    width: 100vw;
+    max-width: none;
+  }
+  
+  .skill-item {
+    max-width: none;
+  }
+  
+  .skill-name {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
   .certificate-card {
     flex: 0 0 260px;
   }

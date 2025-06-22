@@ -1,5 +1,4 @@
 // static/js/main.js
-
 document.addEventListener('DOMContentLoaded', function() {
   const welcomeScreen = document.getElementById('welcomeScreen');
   const body = document.body;
