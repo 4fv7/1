@@ -1,12 +1,12 @@
 :root {
   /* Primary: Very light blue-gray */
---color-bg-primary: #f8fafc;
+--color-bg-primary: #f8f9fc;
 
 /* Secondary: Soft blue-gray */
---color-bg-secondary: #f1f5f9;
+--color-bg-secondary: #f1f3f7;
 
 /* Tertiary: Light blue-gray */
---color-bg-tertiary: #e2e8f0;
+--color-bg-tertiary: #ebedf1;
 
   --color-text-primary:   #1a1a1a;  /* Dark charcoal for maximum contrast */
   --color-text-secondary: #333333;  /* Medium charcoal for subtitles, links */
