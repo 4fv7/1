@@ -197,7 +197,7 @@ a:not(.linked):hover::after {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(237, 243, 248, 0.3);
+  background: rgba(247, 251, 255, 0.15);
   backdrop-filter: blur(8px);
   will-change: backdrop-filter;
   padding: var(--space-md) var(--space-xl);
@@ -206,7 +206,7 @@ a:not(.linked):hover::after {
 }
 
 .navbar:hover {
-  background: rgba(237, 243, 248, 0.5);
+  background: rgba(247, 251, 255, 0.3);
 }
 
 .navbar .logo a {
@@ -267,7 +267,7 @@ a:not(.linked):hover::after {
   display: inline-flex;           /* make this an inline flex container */
   align-items: center;            /* vertically center the text */
   justify-content: center;
-  color: var(--color-text-secondary);
+  color: rgba(172, 153, 185, 0.75);
   text-decoration: none;
   font-size: var(--font-size-base);
   font-weight: 500;
