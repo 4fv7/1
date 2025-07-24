@@ -131,14 +131,6 @@ h1 {
   margin-bottom: var(--space-xl);
 }
 
-.hero-about{
-  font-family: var(--font-secondary);
-  color: var(--color-accent-primary);
-  text-decoration: none;
-  transition: all var(--transition-normal);
-  position: relative;
-}
-
 h2 {
   font-size: var(--font-size-2xl);
   position: relative;
@@ -165,23 +157,23 @@ ul{
   padding: var(--space-xl);
 }
 a {
-  color: var(--color-accent-primary);
   text-decoration: none;
   transition: all var(--transition-normal);
   position: relative;
 }
-a::after {
+
+a:not(.linked):not(.certificate-link)::after {
   content: '';
   position: absolute;
   bottom: -2px;
   left: 0;
   width: 0;
-  height: 2px;
-  background-color: var(--color-accent-primary);
+  height: 1px;
+  background: linear-gradient(90deg,transparent, var(--color-accent-primary), var(--color-accent-secondary), transparent);
   transition: width var(--transition-normal);
 }
 
-a:not(.linked):hover::after {
+a:not(.linked):not(.certificate-link):hover::after {
   width: 100%;
 }
 
@@ -285,7 +277,6 @@ a:not(.linked):hover::after {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   transition: all var(--transition-fast);
 }
 
@@ -504,101 +495,6 @@ main section:not(#home)::before {
 }
 
 /*--------------------------------------------------------------
-# courses Grid
---------------------------------------------------------------*/
-.courses-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: var(--space-xl);
-  margin-top: var(--space-3xl);
-}
-
-.courses-card {
-  background: var(--color-bg-tertiary);
-  border-radius: var(--border-radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-normal);
-  position: relative;
-  z-index: 1;
-}
-
-.courses-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-lg);
-}
-
-.courses-card::before {
-  content: '';
-  position: absolute;
-  top: -100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(140deg, rgba(0, 206, 201, 0.1), rgba(108, 92, 231, 0.1));
-  z-index: -1;
-  transition: all var(--transition-slow);
-}
-
-.courses-card:hover::before {
-  top: 0;
-}
-
-.courses-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.courses-content {
-  padding: var(--space-lg);
-}
-
-.courses-content h3 {
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--space-sm);
-}
-
-.courses-content p {
-  font-size: var(--font-size-base);
-  margin-bottom: var(--space-md);
-}
-
-.courses-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-md);
-}
-
-.courses-tag {
-  padding: var(--space-xs) var(--space-sm);
-  background: rgba(0, 206, 201, 0.1);
-  color: var(--color-accent-primary);
-  border-radius: var(--border-radius-full);
-  font-size: var(--font-size-sm);
-}
-
-.courses-link {
-  display: inline-block;
-  padding: var(--space-sm) var(--space-md);
-  background: linear-gradient(140deg, var(--color-accent-primary), var(--color-accent-secondary));
-  color: var(--color-text-primary);
-  border-radius: var(--border-radius-md);
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  transition: all var(--transition-normal);
-}
-
-.courses-link:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.courses-link::after {
-  display: none;
-}
-/*--------------------------------------------------------------
 # contents/texts
 --------------------------------------------------------------*/
 .about-content span,.experience-content p strong{
@@ -722,8 +618,7 @@ form textarea {
 form input:focus,
 form textarea:focus {
   outline: none;
-  border-color: var(--color-accent-primary);
-  box-shadow: 0 0 0 3px var(--color-accent-primary);
+  box-shadow: 0 0 0 1px var(--color-accent-secondary);
 }
 
 form button {
@@ -775,7 +670,6 @@ form button:active {
 
 form button:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(79, 195, 247, 0.4);
 }
 
 @keyframes fly-1 {
@@ -1179,11 +1073,6 @@ footer {
     font-size: 1.5rem;
   }
 
-  /* Grids */
-  .courses-grid {
-    grid-template-columns: 1fr;
-  }
-
 }
 
 /* Certificates Section Styling */
@@ -1196,11 +1085,11 @@ footer {
   padding-bottom: var(--space-sm);
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
-  scrollbar-color: var(--color-accent-primary) transparent;
+  scrollbar-color: var(--color-accent-secondary) transparent;
 }
 
 .certificates-scroll::-webkit-scrollbar {
-  height: 6px;
+  height: 10px;
 }
 
 .certificates-scroll::-webkit-scrollbar-track {
@@ -1208,14 +1097,12 @@ footer {
 }
 
 .certificates-scroll::-webkit-scrollbar-thumb {
-  background: var(--color-accent-primary);
   border-radius: var(--border-radius-full);
 }
 
 .certificate-card {
   flex: 0 0 300px;
   padding: var(--space-sm);
-  border: 1px solid var(--color-bg-tertiary);
   border-radius: var(--border-radius-md);
   background: var(--color-bg-secondary);
   transition: var(--transition-normal);
@@ -1223,8 +1110,8 @@ footer {
 }
 
 .certificate-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
 
 .certificate-link {
