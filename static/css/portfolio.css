@@ -420,6 +420,26 @@ a:not(.linked):not(.certificate-link):hover::after {
   padding: var(--space-lg);
 }
 
+/* hero-content h1 styles "welcome" */
+.hero-content h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: 800;
+  background: linear-gradient(45deg, var(--color-accent-primary), var(--color-accent-secondary), var(--color-accent-primary));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: gradientShift 3s ease-in-out infinite;
+  text-shadow: 0 0 30px rgba(79, 195, 247, 0.5); /* Using your accent primary color */
+  margin-bottom: var(--space-xl);
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
 /*--------------------------------------------------------------
 # Section Styling
 --------------------------------------------------------------*/
