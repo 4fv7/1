@@ -502,7 +502,7 @@ main section:not(#home)::before {
 
 .section-title p {
   max-width: 600px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 /* Horizontal line divider */
@@ -577,7 +577,7 @@ main section:not(#home)::before {
   color: white;
   padding: 30px;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 800;
   text-align: center;
   transition: all 0.3s ease;
 }
@@ -1067,6 +1067,52 @@ footer {
     padding: 20px;
   }
 
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    padding: var(--space-lg);
+    margin: var(--space-xl) 0;
+  }
+  
+  .project-card {
+    max-width: 100%;
+    min-height: 420px;
+  }
+  
+  .project-image {
+    height: 250px;
+  }
+  
+  .project-info {
+    padding: var(--space-md);
+    gap: var(--space-sm);
+    min-height: 170px;
+  }
+  
+  .project-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .project-header h3 {
+    font-size: var(--font-size-base);
+  }
+  
+  .project-content p {
+    font-size: var(--font-size-sm);
+  }
+  
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .project-link-text {
+    font-size: var(--font-size-sm);
+  }
+
   /* Certificates */
   .certificate-card {
     min-width: 280px !important;
@@ -1095,7 +1141,194 @@ footer {
 
 }
 
-/* Certificates Section Styling */
+/*--------------------------------------------------------------
+# Projects Section
+--------------------------------------------------------------*/
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-2xl);
+  margin: var(--space-2xl) 0;
+  padding: var(--space-xl);
+}
+
+.project-card {
+  background: var(--color-bg-secondary);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  transform: translateZ(0); /* Forces GPU acceleration */
+}
+
+.project-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.project-link::after {
+  display: none;
+}
+
+.project-image {
+  width: 100%;
+  height: 300px; /* 60% of card height equivalent */
+  object-fit: cover;
+  transition: var(--transition-normal);
+  flex-shrink: 0;
+}
+
+.project-info {
+  /* 40% of card for content */
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  flex-grow: 1;
+  min-height: 180px;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+  margin-bottom: var(--space-sm);
+}
+
+.project-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-md);
+  background: linear-gradient(145deg, var(--color-accent-primary), var(--color-accent-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  line-height: 0;
+  position: relative;
+}
+
+.project-icon i {
+  /* Option 1: Using flexbox alignment */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  
+  /* Option 2: Using absolute positioning (use this if option 1 doesn't work) */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* Remove any potential extra space */
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.project-header h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  flex-grow: 1;
+}
+
+.project-content p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-tertiary);
+  line-height: 1.6;
+  margin: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin: var(--space-sm) 0;
+  min-height: auto;
+}
+
+.tech-tag {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-secondary);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+
+.project-footer {
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-bg-tertiary);
+  flex-shrink: 0;
+}
+
+.project-link-text {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-accent-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  transition: all var(--transition-normal);
+  padding: var(--space-xs) 0;
+}
+
+.project-link-text i {
+  transition: all var(--transition-normal);
+  font-size: 1rem;
+}
+
+.project-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+}
+
+.project-card:hover .tech-tag {
+  background: linear-gradient(145deg, var(--color-accent-primary), var(--color-accent-secondary));
+  color: white;
+}
+
+.project-card:hover .project-link-text {
+  color: var(--color-accent-secondary);
+  transform: translateX(5px);
+}
+
+.project-card:hover .project-link-text i {
+  transform: translateX(3px);
+}
+
+/*--------------------------------------------------------------
+# Certificates Section
+--------------------------------------------------------------*/
+
 .certificates-scroll {
   margin:auto;
   display: flex;
@@ -1165,6 +1398,56 @@ footer {
 
 /* Mobile Optimization */
 @media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    margin: var(--space-lg) 0;
+  }
+  
+  .project-card {
+    min-height: 420px;
+  }
+  
+  .project-image {
+    height: 250px;
+  }
+  
+  .project-info {
+    padding: var(--space-sm);
+    gap: var(--space-sm);
+    min-height: 160px;
+  }
+  
+  .project-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+  
+  .project-header h3 {
+    font-size: var(--font-size-sm);
+  }
+  
+  .project-content p {
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+  }
+  
+  .project-tech {
+    gap: var(--space-xs);
+    margin: var(--space-xs) 0;
+  }
+  
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .project-link-text {
+    font-size: var(--font-size-sm);
+  }
+
   .certificates-scroll {
     gap: 1rem;
     padding-left: 1rem;
@@ -1208,6 +1491,70 @@ footer {
     font-size: 1.2rem;
     padding: 15px;
   }
+  
+  
+  .projects-grid {
+    padding: var(--space-sm);
+    gap: var(--space-md);
+    grid-template-columns: 1fr;
+  }
+  
+  .project-card {
+    min-height: 420px;
+  }
+  
+  .project-image {
+    height: 250px;
+  }
+  
+  .project-info {
+    padding: var(--space-md);
+    gap: var(--space-md);
+    min-height: 150px;
+  }
+  
+  .project-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+  
+  .project-header {
+    margin-bottom: var(--space-xs);
+  }
+  
+  .project-header h3 {
+    font-size: var(--font-size-sm);
+    line-height: 1.2;
+  }
+  
+  .project-content {
+    gap: var(--space-sm);
+  }
+  
+  .project-content p {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+  
+  .project-tech {
+    gap: var(--space-xs);
+    margin: var(--space-xs) 0;
+  }
+  
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .project-footer {
+    padding-top: var(--space-xs);
+  }
+  
+  .project-link-text {
+    font-size: 0.9rem;
+  }
+
   .certificate-card {
     flex: 0 0 260px;
   }
