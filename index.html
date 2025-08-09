@@ -1,381 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Rashed's page</title>
-  <link rel="icon" type="image/png" href="static/images/favicon.png">
-  
-  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-  <script type="text/javascript">
-    (function(){
-      emailjs.init("3GimB5xCMJWskG-CE");
-    })();
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;350;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-  <link rel="stylesheet" href="static/css/portfolio.css">
-  <link rel="stylesheet" href="static/css/scroll_animations.css">
-  <link rel="stylesheet" href="static/css/welcome-screen.css">
-  <script src="static/js/main.js"></script>
-  <script src="static/js/scroll_transitions.js"></script>
-</head>
-<body>
-  <!-- Welcome Screen -->
-  <div class="welcome-screen" id="welcomeScreen">
-    <div class="logo-container">
-      <svg class="hexagon-svg" viewBox="0 0 300 300">
-        <defs>
-          <linearGradient id="hexagonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:var(--color-accent-primary);stop-opacity:1" />
-            <stop offset="100%" style="stop-color:var(--color-accent-secondary);stop-opacity:1" />
-          </linearGradient>
-        </defs>
-        <polygon 
-          class="hexagon-path" 
-          points="150,30 255,90 255,210 150,270 45,210 45,90"
-        />
-      </svg>
-      <div class="logo-text">4fv7</div>
-    </div>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Rashed's page</title>
+    <link rel="icon" type="image/png" href="static/images/favicon.png" />
 
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="https://4fv7.github.io/1/"><p class="4fv7">4fv7</p></a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#courses">Courses</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="menu-toggle" aria-expanded="false" aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
-  </header>
-
-  <main>
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <video autoplay muted loop playsinline id="hero-video">
-        <source src="static/videos/hero.mp4" type="video/mp4">
-      </video>
-      <div class="hero-content">
-        <h1>WELCOME</h1>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="container">
-      <div class="section-title">
-        <h2>About Me</h2>
-      </div>
-      <div class="about-content">
-        <p>Hello, I'm Rashed, an IT Trainee currently pursuing my B.Sc. in Computer Science at Frankfurt UAS. Now in my sixth semester, I have developed a solid foundation in <span>OOP</span>, <span>DB management</span>, <span>computer networking</span>, and <span>IT security</span>.</p>
-        
-        <p>My passion is reflected in my hands-on experience with both front-end and back-end development, as well as my growing experience in cybersecurity. I have a strong interest in web and mobile app development and am skilled in <span>Python</span>, <span>Java</span>, <span>C</span>/<span>C++</span>, <span>JavaScript</span>, <span>PHP</span>, <span>HTML5</span>, and <span>CSS3</span>. I also have valuable experience with database systems like <span>MariaDB</span>, <span>MySQL</span>, <span>SQLite</span> and <span>MongoDB</span>, which supports my approach to software development.</p>
-        
-        <p>Currently, I'm gaining invaluable experience as an <span>IT Security working student</span> at PAYONE, Germany's largest payment provider in the KRITIS (Critical Infrastructure) environment. In this role, I'm developing expertise in <span>penetration testing</span>, <span>vulnerability management</span>, and <span>Secure SDLC</span> while working with advanced security frameworks and compliance standards like <span>PCI-DSS</span> and <span>DORA</span> regulations. This experience has significantly enhanced my skills in offensive security and building automation tools for critical infrastructure protection.</p>
-        
-        <p>In my previous role as a <span>Data Entry Assistant</span> at Advanced Middle East Industries Co., I managed large datasets with <span>MS Excel</span>, which helped me further develop my analytical and problem-solving skills. My technical expertise is also shaped by effective teamwork and communication in diverse environments.</p>
-        
-        <p>I am eager to continue expanding my skills through challenging projects that combine academic knowledge with real-world application, particularly in cybersecurity and software development.</p>
-
-        <p>I'm interested in the following fields: </p>
-      </div>
-    </section>
-
-    <!-- Skills Section - Moved outside of container -->
-    <div class="skills-container">
-      <div class="skill-item web-app">
-        <div class="skill-name">Web App Development</div>
-      </div>
-      <div class="skill-item mobile-app">
-        <div class="skill-name">Mobile App Development</div>
-      </div>
-      <div class="skill-item cybersecurity">
-        <div class="skill-name">Cybersecurity</div>
-      </div>
-      <div class="skill-item machine-learning">
-        <div class="skill-name">Machine Learning</div>
+    <script
+      type="text/javascript"
+      src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("3GimB5xCMJWskG-CE");
+      })();
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;350;400;500;600;700;800;900;1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="static/css/portfolio.css" />
+    <link rel="stylesheet" href="static/css/scroll_animations.css" />
+    <link rel="stylesheet" href="static/css/welcome-screen.css" />
+    <script src="static/js/main.js"></script>
+    <script src="static/js/scroll_transitions.js"></script>
+  </head>
+  <body>
+    <!-- Welcome Screen -->
+    <div class="welcome-screen" id="welcomeScreen">
+      <div class="logo-container">
+        <svg class="hexagon-svg" viewBox="0 0 300 300">
+          <defs>
+            <linearGradient
+              id="hexagonGradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop
+                offset="0%"
+                style="stop-color: var(--color-accent-primary); stop-opacity: 1"
+              />
+              <stop
+                offset="100%"
+                style="
+                  stop-color: var(--color-accent-secondary);
+                  stop-opacity: 1;
+                "
+              />
+            </linearGradient>
+          </defs>
+          <polygon
+            class="hexagon-path"
+            points="150,30 255,90 255,210 150,270 45,210 45,90"
+          />
+        </svg>
+        <div class="logo-text">4fv7</div>
       </div>
     </div>
 
-    <!-- Experience Section -->
-    <section id="experience" class="container">
-      <div class="section-title">
-        <h2>Experience</h2>
-      </div>
-
-      <!-- PAYONE Experience -->
-      <a class="linked" href="https://www.payone.com/DE-en" target="_blank" rel="noopener"><img src="static/images/payone.png" alt="Experience" class="experience-image" href=""></a>
-      <div class="experience-content">
-        <p><strong>IT Security Werkstudent</strong>  
-          @ PAYONE (Frankfurt, Germany)  
-          Jun 2025 – Dec 2025</p>
-          <ul>
-          <li>A working student in the IT Security department of Germany's largest payment provider in the KRITIS (Critical Infrastructure) environment, focusing on software security and offensive security measures.</li>  
-          <li>Conducting penetration tests and simulating attack patterns using advanced security frameworks and tools required in the KRITIS sector, developing CTF challenges that simulate real-world payment security scenarios.</li> 
-          <li>Performing comprehensive vulnerability scans and analysis, ensuring compliance with strict KRITIS regulations including DORA and PCI-DSS 4.0 standards for critical infrastructure protection.</li>  
-          <li>Integrating SAST tools and reviewing third-party components for compliance, supporting the implementation of Secure Software Development Life Cycle (SSDLC) processes.</li>  
-          <li>Building automation applications that combine OOP, networking, and security knowledge for vulnerability tracking, team assignment, and SLA management in high-availability payment systems.</li>  
-          <li>Actively participating in security processes, incident documentation, and cross-departmental collaboration with Operations, Infrastructure, and Compliance teams.</li>
-          </ul>
-          <p>Key Skills Developed:
-          Penetration Testing | Vulnerability Management | SAST Integration | KRITIS Compliance | PCI-DSS | API Security | Secure Coding | Critical Infrastructure Security | Automation Development | Payment Security
-          </p>
-      </div>
-
-      <div class="divider-line"></div>
-
-      <!-- MEM Experience -->
-      <a class="linked" href="https://www.mechatronics.com.sa/" target="_blank" rel="noopener"><img src="static/images/mem.png" alt="Experience" class="experience-image" href=""></a>
-      <div class="experience-content">
-        <p><strong>Data Entry Assistant</strong>  
-          @ Advanced Middle East Industries Co. Mechatronics (Jeddah, Saudi Arabia)  
-          Jul 2019 – Jan 2020</p>
-          <ul>
-          <li>Contributed to a leading Automation solutions provider by ensuring accurate and efficient data entry into company systems and databases, maintaining strict confidentiality and integrity of records.</li>  
-          <li>Supported administrative workflows through document management, filing, and timely collaboration with cross-functional teams to meet project deadlines.</li> 
-          <li>Proactively verified and corrected data discrepancies, enhancing overall accuracy and reliability of organizational datasets.</li>  
-          <li>Appreciated for strong attention to detail, flexibility in taking on new challenges, and an enthusiastic, solutions-oriented mindset in a dynamic environment.</li>  
-          <li>Helped create a positive and supportive workplace by communicating professionally, collaborating well with others, and always showing respect to colleagues and supervisors.</li>  
-          </ul>
-          <p>Key Skills Developed:
-           Data Entry | Time Management | Collaborative Problem-Solving | Administrative Support  
-          </p>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="container">
-      <div class="section-title">
-        <h2>Projects</h2>
-        <p>A showcase of my recent work and technical implementations</p>
-      </div>
-
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <div class="project-card">
-          <a href="https://4fv7.github.io/2/" target="_blank" rel="noopener noreferrer" class="project-link">
-            <img src="static/images/project1.jpg" alt="FinanceFlow" class="project-image">
-            <div class="project-info">
-              <div class="project-header">
-                <div class="project-icon">
-                  <i class="fas fa-chart-line"></i>
-                </div>
-                <h3>FinanceFlow</h3>
-              </div>
-              <div class="project-content">
-                <p>A financial management web application featuring responsive design and data visualization capabilities.</p>
-                <div class="project-tech">
-                  <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">React</span>
-                  <span class="tech-tag">CSS3</span>
-                </div>
-              </div>
-              <div class="project-footer">
-                <span class="project-link-text">View Project <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="https://4fv7.github.io/1/"><p class="4fv7">4fv7</p></a>
         </div>
-
-        <!-- Project 2 -->
-        <div class="project-card">
-          <a href="https://4fv7.github.io/3/" target="_blank" rel="noopener noreferrer" class="project-link">
-            <img src="static/images/project2.jpg" alt="Project Beta" class="project-image">
-            <div class="project-info">
-              <div class="project-header">
-                <div class="project-icon">
-                  <i class="fas fa-mobile-alt"></i>
-                </div>
-                <h3>Project Beta</h3>
-              </div>
-              <div class="project-content">
-                <p>An innovative mobile-first application demonstrating advanced user interface design and seamless user experience.</p>
-                <div class="project-tech">
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">Flask</span>
-                  <span class="tech-tag">HTML5</span>
-                </div>
-              </div>
-              <div class="project-footer">
-                <span class="project-link-text">View Project <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card">
-          <a href="https://4fv7.github.io/4/" target="_blank" rel="noopener noreferrer" class="project-link">
-            <img src="static/images/project3.jpg" alt="BRICK BREAKER" class="project-image">
-            <div class="project-info">
-              <div class="project-header">
-                <div class="project-icon">
-                  <i class="fas fa-gamepad"></i>
-                </div>
-                <h3>BRICK BREAKER</h3>
-              </div>
-              <div class="project-content">
-                <p>A classic arcade game implementation with modern graphics and responsive controls.</p>
-                <div class="project-tech">
-                  <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">Canvas</span>
-                  <span class="tech-tag">Game Dev</span>
-                </div>
-              </div>
-              <div class="project-footer">
-                <span class="project-link-text">View Project <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certificates Section -->
-    <section id="courses" class="container">
-      <div class="section-title">
-        <h2>Courses and Certificates</h2>
-      </div>
-
-      <div class="certificates-scroll">
-        <!-- Certificate Card 9 -->
-        <div class="certificate-card">
-          <a href="static/certificates/cert9.jpg" target="_blank" class="certificate-link">
-            <img src="static/certificates/cert9.jpg" alt="Back End Development and APIs" class="certificate-image">
-            <div class="certificate-caption">Back End Development and APIs</div>
-          </a>
-        </div>
-
-        <!-- Certificate Card 8 -->
-        <div class="certificate-card">
-          <a href="static/certificates/cert8.jpg" target="_blank" class="certificate-link">
-            <img src="static/certificates/cert8.jpg" alt="JavaScript Algorithms and Data Structures" class="certificate-image">
-            <div class="certificate-caption">JavaScript Algorithms and Data Structures</div>
-          </a>
-        </div>
-        
-        <!-- Certificate Card 7 -->
-        <div class="certificate-card">
-          <a href="static/certificates/cert7.jpg" target="_blank" class="certificate-link">
-            <img src="static/certificates/cert7.jpg" alt="Information Security" class="certificate-image">
-            <div class="certificate-caption">Information Security</div>
-          </a>
-        </div>
-        
-        <!-- Certificate Card 1 -->
-        <div class="certificate-card">
-          <a href="static/certificates/cert1.jpg" target="_blank" class="certificate-link">
-            <img src="static/certificates/cert1.jpg" alt="Software Engineering Certificate" class="certificate-image">
-            <div class="certificate-caption">Responsive Web Design</div>
-          </a>
-        </div>
-
-        <!-- Certificate Card 2 -->
-        <div class="certificate-card">
-          <a href="static/certificates/cert2.jpg" target="_blank" class="certificate-link">
-            <img src="static/certificates/cert2.jpg" alt="Certificate 2" class="certificate-image">
-            <div class="certificate-caption">Software Engineer</div>
-          </a>
-        </div>
-
-        <!-- Certificate Card 3 -->
-        <div class="certificate-card">
-          <a href="static/certificates/cert3.jpg" target="_blank" class="certificate-link">
-            <img src="static/certificates/cert3.jpg" alt="Certificate 3" class="certificate-image">
-            <div class="certificate-caption">Front-end Developer</div>
-          </a>
-        </div>
-
-        <!-- Certificate Card 4 -->
-        <div class="certificate-card">
-          <a href="static/certificates/cert4.jpg" target="_blank" class="certificate-link">
-            <img src="static/certificates/cert4.jpg" alt="Certificate 4" class="certificate-image">
-            <div class="certificate-caption">Security Engineer</div>
-          </a>
-        </div>
-
-        <!-- Certificate Card 5 -->
-        <div class="certificate-card">
-          <a href="static/certificates/cert5.jpg" target="_blank" class="certificate-link">
-            <img src="static/certificates/cert5.jpg" alt="Certificate 5" class="certificate-image">
-            <div class="certificate-caption">Jr Penetration Tester</div>
-          </a>
-        </div>
-
-        <!-- Certificate Card 6 -->
-        <div class="certificate-card">
-          <a href="static/certificates/cert6.jpg" target="_blank" class="certificate-link">
-            <img src="static/certificates/cert6.jpg" alt="Certificate 6" class="certificate-image">
-            <div class="certificate-caption">Cybersecurity 101</div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="container">
-      <div class="section-title">
-        <h2>Contact Me</h2>
-        <p>Let's get in touch</p>
-      </div>
-      <form id="contact-form">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        
-        <button type="submit">
-          <div class="svg-wrapper-1">
-            <div class="svg-wrapper">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z"></path>
-                <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
-              </svg>
-            </div>
-          </div>
-          <span>Send</span>
-        </button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Social Links</h3>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/rashed-alsuhaibi/" class="social-link" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://www.instagram.com/alsohaibi1/" class="social-link" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="mailto:alsohaibi1000@gmail.com" class="social-link">
-            <i class="fas fa-envelope"></i>
-          </a>
-          <a href="https://github.com/4fv7" class="social-link" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul class="footer-links">
+        <ul class="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
@@ -383,19 +80,603 @@
           <li><a href="#courses">Courses</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <button
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-label="Open menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <video autoplay muted loop playsinline id="hero-video">
+          <source src="static/videos/hero.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-content">
+          <h1>WELCOME</h1>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="container">
+        <div class="section-title">
+          <h2>About Me</h2>
+        </div>
+        <div class="about-content">
+          <p>
+            Hello, I'm Rashed, an IT Trainee currently pursuing my B.Sc. in
+            Computer Science at Frankfurt UAS. Now in my sixth semester, I have
+            developed a solid foundation in <span>OOP</span>,
+            <span>DB management</span>, <span>computer networking</span>, and
+            <span>IT security</span>.
+          </p>
+
+          <p>
+            My passion is reflected in my hands-on experience with both
+            front-end and back-end development, as well as my growing experience
+            in cybersecurity. I have a strong interest in web and mobile app
+            development and am skilled in <span>Python</span>,
+            <span>Java</span>, <span>C</span>/<span>C++</span>,
+            <span>JavaScript</span>, <span>PHP</span>, <span>HTML5</span>, and
+            <span>CSS3</span>. I also have valuable experience with database
+            systems like <span>MariaDB</span>, <span>MySQL</span>,
+            <span>SQLite</span> and <span>MongoDB</span>, which supports my
+            approach to software development.
+          </p>
+
+          <p>
+            Currently, I'm gaining invaluable experience as an
+            <span>IT Security working student</span> at PAYONE, Germany's
+            largest payment provider in the KRITIS (Critical Infrastructure)
+            environment. In this role, I'm developing expertise in
+            <span>penetration testing</span>,
+            <span>vulnerability management</span>, and
+            <span>Secure SDLC</span> while working with advanced security
+            frameworks and compliance standards like <span>PCI-DSS</span> and
+            <span>DORA</span> regulations. This experience has significantly
+            enhanced my skills in offensive security and building automation
+            tools for critical infrastructure protection.
+          </p>
+
+          <p>
+            In my previous role as a <span>Data Entry Assistant</span> at
+            Advanced Middle East Industries Co., I managed large datasets with
+            <span>MS Excel</span>, which helped me further develop my analytical
+            and problem-solving skills. My technical expertise is also shaped by
+            effective teamwork and communication in diverse environments.
+          </p>
+
+          <p>
+            I am eager to continue expanding my skills through challenging
+            projects that combine academic knowledge with real-world
+            application, particularly in cybersecurity and software development.
+          </p>
+
+          <p>I'm interested in the following fields:</p>
+        </div>
+      </section>
+
+      <!-- Skills Section - Moved outside of container -->
+      <div class="skills-container">
+        <div class="skill-item web-app">
+          <div class="skill-name">Web App Development</div>
+        </div>
+        <div class="skill-item mobile-app">
+          <div class="skill-name">Mobile App Development</div>
+        </div>
+        <div class="skill-item cybersecurity">
+          <div class="skill-name">Cybersecurity</div>
+        </div>
+        <div class="skill-item machine-learning">
+          <div class="skill-name">Machine Learning</div>
+        </div>
       </div>
-      <div class="footer-section">
-        <h3>Contact Info</h3>
-        <p>alsohaibi1000@gmail.com</p>
-        <p>+49 15730227310</p>
+
+      <!-- Experience Section -->
+      <section id="experience" class="container">
+        <div class="section-title">
+          <h2>Experience</h2>
+        </div>
+
+        <!-- PAYONE Experience -->
+        <a
+          class="linked"
+          href="https://www.payone.com/DE-en"
+          target="_blank"
+          rel="noopener"
+          ><img
+            src="static/images/payone.png"
+            alt="Experience"
+            class="experience-image"
+            href=""
+        /></a>
+        <div class="experience-content">
+          <p>
+            <strong>IT Security Werkstudent</strong> @ PAYONE (Frankfurt,
+            Germany) Jun 2025 – Dec 2025
+          </p>
+          <ul>
+            <li>
+              A working student in the IT Security department of Germany's
+              largest payment provider in the KRITIS (Critical Infrastructure)
+              environment, focusing on software security and offensive security
+              measures.
+            </li>
+            <li>
+              Conducting penetration tests and simulating attack patterns using
+              advanced security frameworks and tools required in the KRITIS
+              sector, developing CTF challenges that simulate real-world payment
+              security scenarios.
+            </li>
+            <li>
+              Performing comprehensive vulnerability scans and analysis,
+              ensuring compliance with strict KRITIS regulations including DORA
+              and PCI-DSS 4.0 standards for critical infrastructure protection.
+            </li>
+            <li>
+              Integrating SAST tools and reviewing third-party components for
+              compliance, supporting the implementation of Secure Software
+              Development Life Cycle (SSDLC) processes.
+            </li>
+            <li>
+              Building automation applications that combine OOP, networking, and
+              security knowledge for vulnerability tracking, team assignment,
+              and SLA management in high-availability payment systems.
+            </li>
+            <li>
+              Actively participating in security processes, incident
+              documentation, and cross-departmental collaboration with
+              Operations, Infrastructure, and Compliance teams.
+            </li>
+          </ul>
+          <p>
+            Key Skills Developed: Penetration Testing | Vulnerability Management
+            | SAST Integration | KRITIS Compliance | PCI-DSS | API Security |
+            Secure Coding | Critical Infrastructure Security | Automation
+            Development | Payment Security
+          </p>
+        </div>
+
+        <div class="divider-line"></div>
+
+        <!-- MEM Experience -->
+        <a
+          class="linked"
+          href="https://www.mechatronics.com.sa/"
+          target="_blank"
+          rel="noopener"
+          ><img
+            src="static/images/mem.png"
+            alt="Experience"
+            class="experience-image"
+            href=""
+        /></a>
+        <div class="experience-content">
+          <p>
+            <strong>Data Entry Assistant</strong> @ Advanced Middle East
+            Industries Co. Mechatronics (Jeddah, Saudi Arabia) Jul 2019 – Jan
+            2020
+          </p>
+          <ul>
+            <li>
+              Contributed to a leading Automation solutions provider by ensuring
+              accurate and efficient data entry into company systems and
+              databases, maintaining strict confidentiality and integrity of
+              records.
+            </li>
+            <li>
+              Supported administrative workflows through document management,
+              filing, and timely collaboration with cross-functional teams to
+              meet project deadlines.
+            </li>
+            <li>
+              Proactively verified and corrected data discrepancies, enhancing
+              overall accuracy and reliability of organizational datasets.
+            </li>
+            <li>
+              Appreciated for strong attention to detail, flexibility in taking
+              on new challenges, and an enthusiastic, solutions-oriented mindset
+              in a dynamic environment.
+            </li>
+            <li>
+              Helped create a positive and supportive workplace by communicating
+              professionally, collaborating well with others, and always showing
+              respect to colleagues and supervisors.
+            </li>
+          </ul>
+          <p>
+            Key Skills Developed: Data Entry | Time Management | Collaborative
+            Problem-Solving | Administrative Support
+          </p>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="container">
+        <div class="section-title">
+          <h2>Projects</h2>
+          <p>A showcase of my recent work</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <a
+              href="https://4fv7.github.io/2/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              <img
+                src="static/images/project1.jpg"
+                alt="FinanceFlow"
+                class="project-image"
+              />
+              <div class="project-info">
+                <div class="project-header">
+                  <div class="project-icon">
+                    <i class="fas fa-chart-line"></i>
+                  </div>
+                  <h3>FinanceFlow</h3>
+                </div>
+                <div class="project-content">
+                  <p>
+                    A financial management web application featuring responsive
+                    design and data visualization capabilities.
+                  </p>
+                  <div class="project-tech">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">CSS3</span>
+                  </div>
+                </div>
+                <div class="project-footer">
+                  <span class="project-link-text"
+                    >View Project <i class="fas fa-arrow-right"></i
+                  ></span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+            <a
+              href="https://4fv7.github.io/3/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              <img
+                src="static/images/project2.jpg"
+                alt="Project Beta"
+                class="project-image"
+              />
+              <div class="project-info">
+                <div class="project-header">
+                  <div class="project-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                  </div>
+                  <h3>Project Beta</h3>
+                </div>
+                <div class="project-content">
+                  <p>
+                    An innovative mobile-first application demonstrating
+                    advanced user interface design and seamless user experience.
+                  </p>
+                  <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">HTML5</span>
+                  </div>
+                </div>
+                <div class="project-footer">
+                  <span class="project-link-text"
+                    >View Project <i class="fas fa-arrow-right"></i
+                  ></span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card">
+            <a
+              href="https://4fv7.github.io/4/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              <img
+                src="static/images/project3.jpg"
+                alt="BRICK BREAKER"
+                class="project-image"
+              />
+              <div class="project-info">
+                <div class="project-header">
+                  <div class="project-icon">
+                    <i class="fas fa-gamepad"></i>
+                  </div>
+                  <h3>BRICK BREAKER</h3>
+                </div>
+                <div class="project-content">
+                  <p>
+                    A classic arcade game implementation with modern graphics
+                    and responsive controls.
+                  </p>
+                  <div class="project-tech">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Canvas</span>
+                    <span class="tech-tag">Game Dev</span>
+                  </div>
+                </div>
+                <div class="project-footer">
+                  <span class="project-link-text"
+                    >View Project <i class="fas fa-arrow-right"></i
+                  ></span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certificates Section -->
+      <section id="courses" class="container">
+        <div class="section-title">
+          <h2>Courses and Certificates</h2>
+        </div>
+
+        <div class="certificates-scroll">
+          <!-- Certificate Card 9 -->
+          <div class="certificate-card">
+            <a
+              href="static/certificates/cert9.jpg"
+              target="_blank"
+              class="certificate-link"
+            >
+              <img
+                src="static/certificates/cert9.jpg"
+                alt="Back End Development and APIs"
+                class="certificate-image"
+              />
+              <div class="certificate-caption">
+                Back End Development and APIs
+              </div>
+            </a>
+          </div>
+
+          <!-- Certificate Card 8 -->
+          <div class="certificate-card">
+            <a
+              href="static/certificates/cert8.jpg"
+              target="_blank"
+              class="certificate-link"
+            >
+              <img
+                src="static/certificates/cert8.jpg"
+                alt="JavaScript Algorithms and Data Structures"
+                class="certificate-image"
+              />
+              <div class="certificate-caption">
+                JavaScript Algorithms and Data Structures
+              </div>
+            </a>
+          </div>
+
+          <!-- Certificate Card 7 -->
+          <div class="certificate-card">
+            <a
+              href="static/certificates/cert7.jpg"
+              target="_blank"
+              class="certificate-link"
+            >
+              <img
+                src="static/certificates/cert7.jpg"
+                alt="Information Security"
+                class="certificate-image"
+              />
+              <div class="certificate-caption">Information Security</div>
+            </a>
+          </div>
+
+          <!-- Certificate Card 1 -->
+          <div class="certificate-card">
+            <a
+              href="static/certificates/cert1.jpg"
+              target="_blank"
+              class="certificate-link"
+            >
+              <img
+                src="static/certificates/cert1.jpg"
+                alt="Software Engineering Certificate"
+                class="certificate-image"
+              />
+              <div class="certificate-caption">Responsive Web Design</div>
+            </a>
+          </div>
+
+          <!-- Certificate Card 2 -->
+          <div class="certificate-card">
+            <a
+              href="static/certificates/cert2.jpg"
+              target="_blank"
+              class="certificate-link"
+            >
+              <img
+                src="static/certificates/cert2.jpg"
+                alt="Certificate 2"
+                class="certificate-image"
+              />
+              <div class="certificate-caption">Software Engineer</div>
+            </a>
+          </div>
+
+          <!-- Certificate Card 3 -->
+          <div class="certificate-card">
+            <a
+              href="static/certificates/cert3.jpg"
+              target="_blank"
+              class="certificate-link"
+            >
+              <img
+                src="static/certificates/cert3.jpg"
+                alt="Certificate 3"
+                class="certificate-image"
+              />
+              <div class="certificate-caption">Front-end Developer</div>
+            </a>
+          </div>
+
+          <!-- Certificate Card 4 -->
+          <div class="certificate-card">
+            <a
+              href="static/certificates/cert4.jpg"
+              target="_blank"
+              class="certificate-link"
+            >
+              <img
+                src="static/certificates/cert4.jpg"
+                alt="Certificate 4"
+                class="certificate-image"
+              />
+              <div class="certificate-caption">Security Engineer</div>
+            </a>
+          </div>
+
+          <!-- Certificate Card 5 -->
+          <div class="certificate-card">
+            <a
+              href="static/certificates/cert5.jpg"
+              target="_blank"
+              class="certificate-link"
+            >
+              <img
+                src="static/certificates/cert5.jpg"
+                alt="Certificate 5"
+                class="certificate-image"
+              />
+              <div class="certificate-caption">Jr Penetration Tester</div>
+            </a>
+          </div>
+
+          <!-- Certificate Card 6 -->
+          <div class="certificate-card">
+            <a
+              href="static/certificates/cert6.jpg"
+              target="_blank"
+              class="certificate-link"
+            >
+              <img
+                src="static/certificates/cert6.jpg"
+                alt="Certificate 6"
+                class="certificate-image"
+              />
+              <div class="certificate-caption">Cybersecurity 101</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="container">
+        <div class="section-title">
+          <h2>Contact Me</h2>
+          <p>Let's get in touch</p>
+        </div>
+        <form id="contact-form">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">
+            <div class="svg-wrapper-1">
+              <div class="svg-wrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                >
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    fill="currentColor"
+                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <span>Send</span>
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Social Links</h3>
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/rashed-alsuhaibi/"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/alsohaibi1/"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:alsohaibi1000@gmail.com" class="social-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a
+              href="https://github.com/4fv7"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <p>alsohaibi1000@gmail.com</p>
+          <p>+49 15730227310</p>
+        </div>
       </div>
-    </div>
-    <div class="copyright">
-      <p>&copy; 2025 Rashed. All Rights Reserved. :)</p>
-    </div>
-  </footer>
-</body>
+      <div class="copyright">
+        <p>&copy; 2025 Rashed. All Rights Reserved. :)</p>
+      </div>
+    </footer>
+  </body>
 </html>
-
-
-
