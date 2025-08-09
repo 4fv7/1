@@ -1441,7 +1441,7 @@ footer {
   display: flex;
   gap: 1.5rem;
   overflow-x: auto;
-  padding: 1rem 0;
+  padding: 1rem;
   padding-bottom: var(--space-sm);
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
