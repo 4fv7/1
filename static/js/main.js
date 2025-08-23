@@ -74,3 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const hex = document.querySelector('.hexagon-path');
+  if (hex && hex.getTotalLength) {
+    const len = hex.getTotalLength();
+    hex.style.setProperty('--hex-length', len);
+  }
+});
+

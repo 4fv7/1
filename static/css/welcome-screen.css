@@ -30,12 +30,12 @@
 }
 
 .logo-text {
-  font-size: 5.1rem;
+  font-size: 5rem;
   font-weight: 800;
   font-family: 'Raleway', sans-serif;
   z-index: 2;
   opacity: 0;
-  animation: textAppear 0.7s ease-in-out 1s forwards;
+  animation: textAppear 0.8s ease-in-out 0.8s forwards;
   white-space: nowrap; /* Prevent text wrapping */
 
   /* Gradient text color */
@@ -61,40 +61,25 @@
   fill: none;
   stroke: url(#hexagonGradient);
   stroke-width: 3;
-  stroke-dasharray: 900;
-  stroke-dashoffset: 900;
+  /* Use a CSS variable for actual length (set via JS) */
+  stroke-dasharray: var(--hex-length, 900);
+  stroke-dashoffset: var(--hex-length, 900);
   filter: drop-shadow(0 0 10px rgba(116, 75, 162, 0.3));
-  animation: 
-    drawHexagon 1.5s ease-in-out 1s forwards,
-    eraseHexagon 1.3s ease-in-out 2.2s forwards;
+  animation:
+    hex-draw 1.2s ease-in-out 1s forwards,
+    hex-erase 1.2s ease-in-out 2.5s forwards;
 }
 
-@keyframes drawHexagon {
-  0% {
-    stroke-dashoffset: 900;
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
+@keyframes hex-draw {
+  0%   { stroke-dashoffset: var(--hex-length, 900); opacity: 0; }
+  10%  { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
 }
 
-@keyframes eraseHexagon {
-  0% {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    stroke-dashoffset: -900;
-    opacity: 0;
-  }
+@keyframes hex-erase {
+  0%   { stroke-dashoffset: 0; opacity: 1; }
+  80%  { opacity: 1; }
+  100% { stroke-dashoffset: var(--hex-length, 900); opacity: 0; }
 }
 
 @keyframes textAppear {
