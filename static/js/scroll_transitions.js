@@ -1,139 +1,73 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // Create scroll progress indicator
+document.addEventListener('DOMContentLoaded', () => {
   const progressBar = document.createElement('div');
   progressBar.className = 'scroll-progress';
   document.body.appendChild(progressBar);
 
-  // Add reveal classes to sections
-  document.querySelectorAll('section').forEach((section, index) => {
-    if (index > 0) { // Skip hero section
-      section.classList.add('reveal');
-    }
+  document.querySelectorAll('section').forEach((s,i)=> {
+    if (i>0) s.classList.add('reveal');
   });
+  document.querySelectorAll('.projects-grid, .skills-container')
+    .forEach(g => g.classList.add('stagger-reveal'));
+  document.querySelectorAll('.section-title')
+    .forEach(t => t.classList.add('reveal-left'));
 
-  // Add stagger reveal to grid containers
-  document.querySelectorAll('.projects-grid, .skills-container').forEach(grid => {
-    grid.classList.add('stagger-reveal');
-  });
-
-  // Add reveal-left and reveal-right to alternating content blocks
-  document.querySelectorAll('.section-title').forEach(title => {
-    title.classList.add('reveal-left');
-  });
-
-  // Update scroll progress bar
   function updateScrollProgress() {
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight - windowHeight;
-    const scrollTop = window.scrollY;
-    const progress = (scrollTop / documentHeight) * 100;
-    
+    const windowH = innerHeight;
+    const docH = document.documentElement.scrollHeight - windowH;
+    const scrollTop = scrollY;
+    const progress = docH ? (scrollTop / docH) * 100 : 0;
     progressBar.style.width = progress + '%';
   }
 
-  // Reveal elements on scroll
   function revealOnScroll() {
-    const windowHeight = window.innerHeight;
-    const revealPoint = 150; // Distance from bottom of viewport to trigger animation
-    
-    // Handle standard reveal animations
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger-reveal').forEach(element => {
-      const elementTop = element.getBoundingClientRect().top;
-      
-      if (elementTop < windowHeight - revealPoint) {
-        element.classList.add('active');
-      }
-    });
-    
-    // Update active nav link based on scroll position
+    const windowH = innerHeight;
+    const trigger = 150;
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger-reveal')
+      .forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < windowH - trigger) el.classList.add('active');
+      });
+
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-links a');
-    
     let current = '';
-    
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      
-      if (window.pageYOffset >= sectionTop - 100) {
-        current = section.getAttribute('id');
-      }
+    sections.forEach(sec => {
+      if (pageYOffset >= sec.offsetTop - 100) current = sec.id;
     });
-    
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
+    navLinks.forEach(l => {
+      l.classList.toggle('active', l.getAttribute('href') === `#${current}`);
     });
   }
 
+  // Removed highlight effect (no CSS defined); smooth scroll only
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', e => {
       e.preventDefault();
-      
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      
-      if (targetElement) {
-        // Add a subtle highlight animation to the target section
-        targetElement.classList.add('highlight');
-        setTimeout(() => {
-          targetElement.classList.remove('highlight');
-        }, 1000);
-        
-        // If the target is '#home', scroll all the way to top. Otherwise, apply a fixed header offset.
-        let targetPosition = targetId === '#home' ? 0 : targetElement.offsetTop - 70;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      }
+      const id = anchor.getAttribute('href');
+      const target = document.querySelector(id);
+      if (!target) return;
+      const top = id === '#home' ? 0 : target.offsetTop - 70;
+      scrollTo({ top, behavior: 'smooth' });
     });
   });
-  
 
-  // Parallax effect for hero section
-  function parallaxEffect() {
-    const hero = document.querySelector('.hero');
-    if (hero) {
-      const scrollPosition = window.pageYOffset;
-      hero.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
-    }
-  }
-
-  // Initialize scroll animations
   function init() {
     updateScrollProgress();
     revealOnScroll();
-    parallaxEffect();
-    
-    // Initial check for elements in viewport on page load
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger-reveal').forEach(element => {
-      const elementTop = element.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      
-      if (elementTop < windowHeight) {
-        element.classList.add('active');
-      }
-    });
+    // Removed parallaxEffect (unused background)
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger-reveal')
+      .forEach(el => {
+        if (el.getBoundingClientRect().top < innerHeight) el.classList.add('active');
+      });
   }
 
-  // Event listeners
-  window.addEventListener('scroll', function() {
+  addEventListener('scroll', () => {
     updateScrollProgress();
     revealOnScroll();
-    parallaxEffect();
   });
 
-  window.addEventListener('resize', init);
+  addEventListener('resize', init);
 
-  // Initialize on page load
   init();
-
-  // Preload animations
-  setTimeout(() => {
-    document.body.classList.add('loaded');
-  }, 300);
+  setTimeout(()=> document.body.classList.add('loaded'), 300);
 });

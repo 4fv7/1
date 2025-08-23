@@ -16,7 +16,6 @@
   overflow: hidden; /* Prevent any overflow */
 }
 
-
 .logo-container {
   position: relative;
   width: 400px;
@@ -32,14 +31,18 @@
 .logo-text {
   font-size: 5rem;
   font-weight: 800;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   z-index: 2;
   opacity: 0;
   animation: textAppear 0.8s ease-in-out 0.8s forwards;
   white-space: nowrap; /* Prevent text wrapping */
 
   /* Gradient text color */
-  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-primary),
+    var(--color-accent-secondary)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -65,21 +68,36 @@
   stroke-dasharray: var(--hex-length, 900);
   stroke-dashoffset: var(--hex-length, 900);
   filter: drop-shadow(0 0 10px rgba(116, 75, 162, 0.3));
-  animation:
-    hex-draw 1.2s ease-in-out 1s forwards,
+  animation: hex-draw 1.2s ease-in-out 1s forwards,
     hex-erase 1.2s ease-in-out 2.5s forwards;
 }
 
 @keyframes hex-draw {
-  0%   { stroke-dashoffset: var(--hex-length, 900); opacity: 0; }
-  10%  { opacity: 1; }
-  100% { stroke-dashoffset: 0; opacity: 1; }
+  0% {
+    stroke-dashoffset: var(--hex-length, 900);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
 }
 
 @keyframes hex-erase {
-  0%   { stroke-dashoffset: 0; opacity: 1; }
-  80%  { opacity: 1; }
-  100% { stroke-dashoffset: var(--hex-length, 900); opacity: 0; }
+  0% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: var(--hex-length, 900);
+    opacity: 0;
+  }
 }
 
 @keyframes textAppear {
